@@ -29,6 +29,7 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="widjet.css" rel="stylesheet" />
 
   </head>
 
@@ -142,34 +143,11 @@
 
 
       <!-- ============================================-->
-       <!-- Chat Widget -->
-  <div id="chat-widget">
-    <div id="chat-header">
-      <span>Live Chat with MCICTS AI 🧑🏻‍💻</span>
-      <button id="close-chat" title="Close Chat"><i class="fa-solid fa-times"></i></button>
+      <div id="chat-widget" onclick="goToContact()">
+        Chat with 24h AI Assitant  &nbsp; <i class="fas fa-comment"></i>
     </div>
-    <div id="chat-body">
-      <div id="chat-messages">
-        <!-- Sample Questions -->
-        <div class="message suggestion">
-          <i class="fa-solid fa-question-circle"></i> What is MCICTS?
-        </div>
-        <div class="message suggestion">
-          <i class="fa-solid fa-question-circle"></i> Who is the president and members?
-        </div>
-        <div class="message suggestion">
-          <i class="fa-solid fa-question-circle"></i> How to join and who can join?
-        </div>
-        <div class="message suggestion">
-          <i class="fa-solid fa-question-circle"></i> What Happen if I joined
-        </div>
-      </div>
-      <form id="chat-form">
-        <input type="text" id="user-input" placeholder="Type your message..." required>
-        <button type="submit" id="send-button" title="Send"><i class="fa-solid fa-paper-plane"></i></button>
-      </form>
-    </div>
-  </div>
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-0f92d308-d614-4bb2-97c1-ea4715e857b8" data-elfsight-app-lazy></div>
       <!-- <section> begin ============================-->
       <section class="pt-5" id="destination">
 
@@ -501,7 +479,8 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="vendors/fontawesome/all.min.js"></script>
     <script src="assets/js/theme.js"></script>
-    <script src="assets/js/livesup.js"></script>
+    <script src="wid.js"></script>
+
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
   </body>

@@ -1,0 +1,30 @@
+/* Styling for the chat widget */
+#chat-widget {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background-color: #004201;
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+#chat-widget:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Styling for the icon within the widget */
+#chat-widget i {
+    margin-left: 10px; /* Space between text and icon */
+    font-size: 20px;
+}
