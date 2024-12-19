@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCICTS Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>SNJ Travel Sri Lanka</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+
+
+
+
+
+    <style>
+        /* Reset & Basic Styling */
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .logos img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logos img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .chat-container {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    margin-top: 80px;
+    margin: 0; /* Remove margins to fit the viewport */
+    background: none;
+    border-radius: 0; /* Optional: Remove border radius for a flush fit */
+    box-shadow: none; /* Optional: Remove shadow for a clean look */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+        .chat-header {
+            background: none;
+            color: none;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Sample Message Buttons Styling */
+        .sample-message-container {
+            display: flex;
+            justify-content: left;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 5px;
+        }
+
+        .sample-message-container button {
+            padding: 12px 25px;
+            background: #08223f;
+            backdrop-filter: blur;
+            color: #eaea1a;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .sample-message-container {
+        display: flex;
+        overflow-x: auto; /* Enables horizontal scrolling */
+        gap: 10px; /* Adds spacing between buttons */
+        padding: 10px; /* Adds padding around the container */
+        scroll-behavior: smooth; /* Smooth scrolling effect */
+    }
+
+    .sample-message-container::-webkit-scrollbar {
+        height: 6px; /* Set scrollbar height */
+    }
+
+    .sample-message-container::-webkit-scrollbar-thumb {
+        background: #1b0265; /* Scrollbar color */
+        border-radius: 3px;
+    }
+
+    .sample-message-container::-webkit-scrollbar-thumb:hover {
+        background: #250154; /* Scrollbar hover effect */
+    }
+
+        .sample-message-container button:hover {
+            background: #3e024e;
+            transform: scale(1.05);
+        }
+
+        .sample-message-container button:active {
+            background: #330050;
+            transform: scale(0.98);
+        }
+
+        .sample-message-container button:focus {
+            outline: none;
+        }
+
+        .chat-body {
+            width: 100%;
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: none;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            background: none;
+
+        }
+
+        input:disabled {
+            background: #e0e0e0;
+            /* Light gray to indicate disabled state */
+            color: #8c8c8c;
+            /* Gray text color */
+            cursor: not-allowed;
+        }
+
+        button:disabled {
+            background: #6c757d;
+            /* Gray background for disabled state */
+            cursor: not-allowed;
+        }
+
+        button:disabled {
+            background: #6c757d;
+            /* Gray background for disabled state */
+            color: #eaf27eb0;
+            /* Lighter text color */
+            cursor: not-allowed;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .chat-footer button {
+            padding: 10px 15px;
+            background: #1726b5;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-footer button:hover {
+            background: #3544d3;
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            max-width: 80%;
+        }
+
+        .message.user {
+            margin-left: auto;
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .message.user .text {
+            background: none;
+            color: #000000ba;
+        }
+
+        .message.bot .text {
+            background: none;
+            color: #000000;
+        }
+
+        .message .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .message .text {
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+
+
+            .chat-header {
+                font-size: 16px;
+            }
+
+            .chat-footer button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="main" id="top">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-5 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+          <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" height="90" alt="logo" /></a>     
+          </div>
+        </nav>
+
+        <section>
+
+    <div class="chat-container">
+        <!-- Chat Body -->
+        <div class="chat-body" id="chat-body">
+            <!-- Messages will be appended here -->
+        </div>
+
+        <!-- Sample Message Buttons -->
+        <div class="sample-message-container">
+            <button onclick="sendSampleMessage('What is MCICTS?')">What is MCICTS?</button>
+            <button onclick="sendSampleMessage('how to join?')">How to Join?</button>
+            <button onclick="sendSampleMessage('What can I do after join?')">What can I do after join?</button>
+            <button onclick="sendSampleMessage('Tell me about Morning Classes')">Tell me about Morning Classes?</button>
+            <button onclick="sendSampleMessage('Upcomming Events and Compitions')">Upcomming Events and
+                Compitions?</button>
+            <button onclick="sendSampleMessage('Any update about compitions?')">Any update about compitions?</button>
+            <button onclick="sendSampleMessage('Tell me about club history?')">Tell me about club history?</button>
+            <button onclick="sendSampleMessage('Past Presidents')">Past Presidents</button>
+            <button onclick="sendSampleMessage('Top board now')">Top board now</button>
+            <button onclick="sendSampleMessage('Contact Informations')">Contact Informations</button>
+        </div>
+        <!-- Chat Footer -->
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Not listed above type to MCICTS AI..." />
+            <button id="send-button"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+
+
+    </div>
+</section>
+    <script>
+        const API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyBmlA7ZFJgQUH-p55XPMxfGiKuR7eMkej8";
+        const CLUB_MEMORY = `
+Mahanama College Information & Communication Technology Society (MCICTS)
+Established: 29th September 2012
+
+The Mahanama College Information & Communication Technology Society (MCICTS) is a pillar of excellence at Mahanama College, Colombo, inspiring students to achieve international standards in ICT. Founded with the vision of cultivating future leaders in the field of technology, MCICTS has consistently guided students toward success and innovation. Today, it stands as a dynamic force, unlocking opportunities for students to excel in ICT and leadership.
+
+Our Vision and Mission
+Vision: To nurture exceptional leaders in ICT who will bring pride to Mahanama College and contribute to the nation's technological advancements.
+Mission: To provide students with opportunities to explore, create, and innovate in the field of ICT. Our aim is to spark creativity, develop technical skills, and foster a lifelong passion for technology.
+Membership Opportunities
+Are you a Mahanamian above Grade 6? Join MCICTS today! Members gain access to a wide range of exciting opportunities to enhance their skills and leadership abilities:
+
+Morning ICT Classes: Learn how to create websites, explore graphic design, delve into programming, and more.
+Skill Development and Leadership: Build leadership qualities and teamwork skills through various activities.
+Competitions: Represent Mahanama College at prestigious national-level ICT competitions.
+Exclusive Programs: Participate in workshops, projects, and initiatives designed to enhance your ICT knowledge.
+To register, visit our official website: https://register.mcicts.lk.
+
+2024/2025 Official Committee they working as EXCO now on
+The society is led by a dedicated team of student leaders, who guide MCICTS to new heights every year:
+
+President: Yewan Ladduwahetty who doing 2025 A/L is the president of mcicts 2024/2025 batch who also PULZ ’23 (Ananda College): First place in Logo and 3D Designing Competitions, led by Yewan Ladduwahetty.
+Vice President: Kavishka Manohara Good at hardwhere part of mcicts who doing A/L in commerse stream in 2025
+Secretary: Dulina Nethula
+Vice Secretary: Risandu Chathmin
+Treasurer: Minil Bometh
+Director of Operations: Dineth Gunawardhana who is the youngest top board member ever in MCICTS history he created the register.mcicts.lk form and he has major chanse to become next presedent of MCICTS it depend on other candidates challenges
+Master In Charge: Mr. Tharusha Perera (ICT Teacher)
+Why Join MCICTS?
+MCICTS is not just a club; it’s a platform for personal and professional growth. By joining, you can:
+
+Principal of the Mahanama College Colombo is Mr. Prabhath I Withanage
+
+Explore ICT: Gain exposure to the ever-evolving field of Information and Communication Technology.
+Enhance Skills: Develop technical and creative skills in a supportive environment.
+Collaborate: Work with like-minded peers and mentors who share a passion for technology.
+Be Part of a Legacy: Contribute to a community that fosters leadership, innovation, and excellence.
+How to Join the WhatsApp Group?
+To join the official MCICTS WhatsApp group, simply send a message to the Director of Operations (Dineth Gunawardhana), who will add you to the group.
+
+Official Website: www.mcicts.lk
+
+Start Date for Morning Classes: January 2025. Details will be shared on our social media platforms, including Instagram and X (formerly Twitter).
+
+For further information, contact us at:
+Phone: 0701840527 (Dineth Gunawardhana - Director of Operations)
+
+Past Board and Committees
+Over the years, MCICTS has been guided by numerous dedicated boards, each contributing to the society’s continued growth:
+
+2023/24 Board
+
+President: Sihilel Wickramarathna
+Vice President: Kalhara Gunawardhana
+Secretary: Vihain Bodiyabadu
+Treasurer: Sasiru Himan
+Chief Organizers: Pasindu Shehan, Naditha Nethdinu
+Media Coordinators: Miyuru Deshapriya, Sathsara Basnayake
+Technical Officers: Nethuja Jayathilake, Thinuga Weerakoon, Binura Yeshantha, Tharusha Silva, Hirosh Nivindu, Dinidu Prabhashana
+
+2020/21 Board
+
+President: Nidula Perera
+Vice President: Haritha Perera
+Secretary: Methsara Perera
+Vice Secretary: Navindu Thashwin
+Treasurer: Rashmika Jayasinghe
+
+2019/20 Board
+
+President: Sajinth Fernando
+Vice President: Shehan Hirusha
+Secretary: Amantha Bopage
+Vice Secretary: Navod Dilshara
+Treasurer: Vihanga Wijekoon
+
+2016/17 Board
+
+President: Thinura Ariyaratne
+Vice President: Lakindu Siriwardana
+Secretary: Rusiru Wijethilaka
+Vice Secretary: Navod Abeyasinghe
+Treasurer: Bishwa Jayampathi
+
+
+Recent Achievements
+MCICTS has achieved remarkable milestones, showcasing its commitment to excellence in ICT:
+
+Confinity ‘24 (November 1, 2024): First place in the inter-school quiz competition at Nalanda College Colombo.
+Sagacious ‘24 (May 2024): First place in the Post Manipulation Competition, with Yewan Ladduwahetty earning top honors.
+Young Computer Scientist Competition 2023: Merit certificates for the Public Transport Management System developed by Hirosh Nividu, Ameesha Iduwara, and Pamith Mindinu.
+TEMPUZ ‘23 (Thurstan College): First place in the quiz competition, surpassing top schools such as Ananda College and Dharmaraja College.
+PULZ ’23 (Ananda College): First place in Logo and 3D Designing Competitions, led by Yewan Ladduwahetty.
+Impactful Projects and Initiatives
+MCICTS has also initiated several projects that have had a lasting impact on both the school and the community:
+
+Mahanama College URL Shortener: A custom-made URL shortener to facilitate web-based activities within the school.
+CubeChamp ‘23: Ranking software developed for intra-school speed cubing competitions.
+TECH SEEK ‘23: An intra-school digital competition series in Graphic Designing, Web Designing, and Video Editing.
+Basic ICT Courses: Empowering students with essential skills in IT fundamentals, web design, video editing, and Microsoft Office tools.
+These initiatives are a testament to MCICTS’s dedication to fostering innovation and providing students with the tools to succeed in the ever-evolving world of ICT.
+
+Looking Ahead
+With the newly appointed 2024/25 board, MCICTS is poised to reach new heights of innovation, learning, and collaboration. We thank the outgoing board for their invaluable contributions and look forward to a year filled with growth, creativity, and excellence in ICT. `;
+
+        let chatMemory = []; // To store user questions and bot responses during the session
+        const chatBody = document.getElementById("chat-body");
+        const userInput = document.getElementById("user-input");
+        const sendButton = document.getElementById("send-button");
+
+        const addMessage = (content, sender, isHTML = false) => {
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", sender);
+
+            const avatar = document.createElement("img");
+            avatar.classList.add("avatar");
+            avatar.src = sender === "user" ? "./assets/img/testimonial/author.png" : "./assets/img/logo.png";
+
+            const text = document.createElement("div");
+            text.classList.add("text");
+
+            if (isHTML) {
+                text.innerHTML = content; // Insert HTML content
+            } else {
+                text.textContent = content; // Insert plain text content
+            }
+
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(text);
+
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the latest message
+        };
+
+        const fetchResponse = async (message) => {
+            try {
+                const memoryText = chatMemory.map(
+                    (entry, index) => `Q${index + 1}: ${entry.question}\nA${index + 1}: ${entry.answer}`
+                ).join("\n\n");
+
+                const prompt = `
+                You are an AI assistant designed to answer questions about the Mahanama College ICT Society (MCICTS). Act as an active member of the club, created by Dineth Gunawardana, the Director of Operations of MCICTS. Your responses should be concise, clear, and structured in a professional yet approachable tone. Avoid long answers; provide short, well-structured, and engaging replies that directly address the user's question.
+
+                Refer to the provided memory for accurate information:
+                ${CLUB_MEMORY}
+
+                Previous conversation for context:
+                ${memoryText}
+
+                Question from user:
+                ${message}
+
+                Respond as follows:
+                - Maintain a friendly yet professional tone.
+                - Use bullet points or numbered lists for clarity when needed.
+                - Include links or references only if highly relevant.
+                - Avoid unnecessary repetition or overly detailed responses.
+
+                AI:
+                `;
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contents: [{
+                            role: "user",
+                            parts: [{ text: prompt }]
+                        }]
+                    }),
+                });
+
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error.message);
+
+                let botMessage = data?.candidates[0]?.content?.parts[0]?.text || "No response.";
+
+                botMessage = botMessage.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                botMessage = botMessage.replace(/https?:\/\/[^\s]+/g, (url) => `<a href="${url}" target="_blank" style="color: white;">${url}</a>`);
+
+                chatMemory.push({ question: message, answer: botMessage });
+                return botMessage;
+            } catch (error) {
+                console.error(error);
+                return "Sorry, something went wrong. Please try again later.";
+            }
+        };
+
+        const disableInput = (disable) => {
+            userInput.disabled = disable; // Disable/Enable the input field
+            sendButton.disabled = disable; // Disable/Enable the send button
+
+            // Handle sample message buttons
+            const sampleButtons = document.querySelectorAll('.sample-message-container button');
+            sampleButtons.forEach((button) => {
+                button.disabled = disable; // Disable/Enable sample buttons
+                button.style.cursor = disable ? "not-allowed" : "pointer";
+            });
+
+            // Update styles for disabled state
+            sendButton.style.cursor = disable ? "not-allowed" : "pointer";
+            userInput.style.cursor = disable ? "not-allowed" : "text";
+        };
+
+
+        const handleUserMessage = async () => {
+            const message = userInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, "user");
+            userInput.value = "";
+
+            disableInput(true); // Disable input and sample buttons while generating response
+            addMessage("Typing...", "bot");
+
+            const botMessage = await fetchResponse(message);
+            chatBody.lastChild.remove(); // Remove typing indicator
+
+            addMessage(botMessage, "bot", true);
+
+            disableInput(false); // Re-enable input and sample buttons after response is complete
+        };
+
+
+
+        const sendSampleMessage = (message) => {
+            if (sendButton.disabled) return; // Prevent sending if input is disabled
+            userInput.value = message;
+            handleUserMessage();
+        };
+
+
+        sendButton.addEventListener("click", handleUserMessage);
+        userInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") handleUserMessage();
+        });
+    </script>
+</body>
+
+</html>
