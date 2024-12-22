@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Us</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="review-form" id="reviewForm">
+      <h1 class="title">We Value Your Feedback</h1>
+      <form id="reviewSubmitForm">
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group rating-group">
+          <label>Rate Our Service</label>
+          <div class="stars" id="stars">
+            <i class="fas fa-star" data-value="1"></i>
+            <i class="fas fa-star" data-value="2"></i>
+            <i class="fas fa-star" data-value="3"></i>
+            <i class="fas fa-star" data-value="4"></i>
+            <i class="fas fa-star" data-value="5"></i>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="message">Short Description</label>
+          <textarea id="message" rows="4" placeholder="Write your review (optional)"></textarea>
+        </div>
+        <button type="submit" class="btn">Submit Review</button>
+      </form>
+    </div>
+    <div class="thank-you-message" id="thankYouMessage" style="display: none;">
+      <h1>Thank You for Reviewing Us!</h1>
+      <p>Your feedback is highly appreciated and helps us improve our service.</p>
+    </div>
+  </div>
+</body>
+</html>
