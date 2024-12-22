@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCICTS Chat</title>
+    <title>SNJ Tours| AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
@@ -98,9 +98,9 @@
 
         .sample-message-container button {
             padding: 12px 25px;
-            background: #08223f;
+            background: #f7d06d;
             backdrop-filter: blur;
-            color: #eaea1a;
+            color: #000000;
             border: none;
             border-radius: 8px;
             font-size: 16px;
@@ -120,21 +120,21 @@
     }
 
     .sample-message-container::-webkit-scrollbar-thumb {
-        background: #1b0265; /* Scrollbar color */
+        background: #8d8d8d; /* Scrollbar color */
         border-radius: 3px;
     }
 
     .sample-message-container::-webkit-scrollbar-thumb:hover {
-        background: #250154; /* Scrollbar hover effect */
+        background: #9a999b; /* Scrollbar hover effect */
     }
 
         .sample-message-container button:hover {
-            background: #3e024e;
+            background: #faec59;
             transform: scale(1.05);
         }
 
         .sample-message-container button:active {
-            background: #330050;
+            background: #f6c218;
             transform: scale(0.98);
         }
 
@@ -273,21 +273,14 @@
 
         <!-- Sample Message Buttons -->
         <div class="sample-message-container">
-            <button onclick="sendSampleMessage('What is MCICTS?')">What is MCICTS?</button>
-            <button onclick="sendSampleMessage('how to join?')">How to Join?</button>
-            <button onclick="sendSampleMessage('What can I do after join?')">What can I do after join?</button>
-            <button onclick="sendSampleMessage('Tell me about Morning Classes')">Tell me about Morning Classes?</button>
-            <button onclick="sendSampleMessage('Upcomming Events and Compitions')">Upcomming Events and
-                Compitions?</button>
-            <button onclick="sendSampleMessage('Any update about compitions?')">Any update about compitions?</button>
-            <button onclick="sendSampleMessage('Tell me about club history?')">Tell me about club history?</button>
-            <button onclick="sendSampleMessage('Past Presidents')">Past Presidents</button>
-            <button onclick="sendSampleMessage('Top board now')">Top board now</button>
-            <button onclick="sendSampleMessage('Contact Informations')">Contact Informations</button>
+            <button onclick="sendSampleMessage('Plan my trip to Sri Lanka')">Plan My trip to Sri Lanka</button>
+            <button onclick="sendSampleMessage('What are the services snj tours provides?')">What are the services snj tours provides?</button>
+            <button onclick="sendSampleMessage('I wanna contact agent?')">I wanna contact agent?</button>
+            <button onclick="sendSampleMessage('Prices and Packages?')">Prices and Packages?</button>
         </div>
         <!-- Chat Footer -->
         <div class="chat-footer">
-            <input type="text" id="user-input" placeholder="Not listed above type to MCICTS AI..." />
+            <input type="text" id="user-input" placeholder="Not listed above type to snjtours AI..." />
             <button id="send-button"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
 
@@ -297,109 +290,52 @@
     <script>
         const API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyBmlA7ZFJgQUH-p55XPMxfGiKuR7eMkej8";
         const CLUB_MEMORY = `
-Mahanama College Information & Communication Technology Society (MCICTS)
-Established: 29th September 2012
+I am an AI travel consultant representing SNJ Tours, a premier travel agency based in Sri Lanka. My role is to help travelers plan unforgettable trips, provide expert advice on destinations, and seamlessly connect them with SNJ Tours’ exceptional services.
 
-The Mahanama College Information & Communication Technology Society (MCICTS) is a pillar of excellence at Mahanama College, Colombo, inspiring students to achieve international standards in ICT. Founded with the vision of cultivating future leaders in the field of technology, MCICTS has consistently guided students toward success and innovation. Today, it stands as a dynamic force, unlocking opportunities for students to excel in ICT and leadership.
+send this to chat,
+If someone ask to contact agent : +94 71 442 2692 | suranga@snjtours.com  - Suranga Jayasundara 
++94 77 759 0352 | sandaru@snjtours.com - Sandaru Sathsra 
+Email , contact@snjtours.com
 
-Our Vision and Mission
-Vision: To nurture exceptional leaders in ICT who will bring pride to Mahanama College and contribute to the nation's technological advancements.
-Mission: To provide students with opportunities to explore, create, and innovate in the field of ICT. Our aim is to spark creativity, develop technical skills, and foster a lifelong passion for technology.
-Membership Opportunities
-Are you a Mahanamian above Grade 6? Join MCICTS today! Members gain access to a wide range of exciting opportunities to enhance their skills and leadership abilities:
+If someone ask for package say them to contact one of agent and talk with them and get pacges and pricing
 
-Morning ICT Classes: Learn how to create websites, explore graphic design, delve into programming, and more.
-Skill Development and Leadership: Build leadership qualities and teamwork skills through various activities.
-Competitions: Represent Mahanama College at prestigious national-level ICT competitions.
-Exclusive Programs: Participate in workshops, projects, and initiatives designed to enhance your ICT knowledge.
-To register, visit our official website: https://register.mcicts.lk.
+Key Expertise:
+	•	Sri Lanka Specialist: I possess in-depth knowledge of Sri Lanka’s stunning landscapes, cultural landmarks, hidden gems, and must-visit attractions.
+	•	Itinerary Planning: From crafting personalized travel itineraries to recommending the best routes, I ensure every journey is smooth and well-planned.
+	•	Transport Services: SNJ Tours offers reliable transportation services, including:
+	•	Airport to hotel transfers
+	•	Hotel to airport drop-offs
+	•	Full-trip transportation services with professional drivers
+	•	Tour Packages: Whether you’re seeking adventure, cultural immersion, or serene beach holidays, SNJ Tours has tailored packages to suit all preferences.
 
-2024/2025 Official Committee they working as EXCO now on
-The society is led by a dedicated team of student leaders, who guide MCICTS to new heights every year:
+What We Offer:
 
-President: Yewan Ladduwahetty who doing 2025 A/L is the president of mcicts 2024/2025 batch who also PULZ ’23 (Ananda College): First place in Logo and 3D Designing Competitions, led by Yewan Ladduwahetty.
-Vice President: Kavishka Manohara Good at hardwhere part of mcicts who doing A/L in commerse stream in 2025
-Secretary: Dulina Nethula
-Vice Secretary: Risandu Chathmin
-Treasurer: Minil Bometh
-Director of Operations: Dineth Gunawardhana who is the youngest top board member ever in MCICTS history he created the register.mcicts.lk form and he has major chanse to become next presedent of MCICTS it depend on other candidates challenges
-Master In Charge: Mr. Tharusha Perera (ICT Teacher)
-Why Join MCICTS?
-MCICTS is not just a club; it’s a platform for personal and professional growth. By joining, you can:
+At SNJ Tours, we provide comprehensive tourism services to cater to all your travel needs:
+	•	Hotel Bookings: From luxury resorts to cozy guesthouses, we’ll find the perfect accommodation for your stay.
+	•	Wildlife Safaris: Experience the wonders of Sri Lanka’s national parks, including Yala, Udawalawe, and Wilpattu, with professional guides.
+	•	Transportation Services:
+	•	Airport to hotel and hotel to airport transfers
+	•	Full-trip transport with skilled, friendly drivers
+	•	Comfortable, air-conditioned vehicles to suit groups of all sizes
+	•	Tour Packages: Tailored experiences for culture lovers, adventure seekers, honeymooners, and more.
+	•	Local Expertise & Advice: Detailed recommendations on attractions, dining, and activities in all locations across Sri Lanka.
+	•	Custom Itineraries: We’ll create a trip plan designed just for you, with the best routes and experiences to match your preferences.
+	•	Specialty Tours: Temple visits, tea plantation tours, beach vacations, and more.
 
-Principal of the Mahanama College Colombo is Mr. Prabhath I Withanage
+Why Choose SNJ Tours?
+	•	Local Knowledge: As experts in Sri Lanka, we guide you to both popular attractions and hidden gems.
+	•	Convenience: Our all-in-one service ensures a stress-free travel experience, from booking to your return journey.
+	•	Commitment to Quality: We prioritize comfort, safety, and unforgettable memories for every traveler.
 
-Explore ICT: Gain exposure to the ever-evolving field of Information and Communication Technology.
-Enhance Skills: Develop technical and creative skills in a supportive environment.
-Collaborate: Work with like-minded peers and mentors who share a passion for technology.
-Be Part of a Legacy: Contribute to a community that fosters leadership, innovation, and excellence.
-How to Join the WhatsApp Group?
-To join the official MCICTS WhatsApp group, simply send a message to the Director of Operations (Dineth Gunawardhana), who will add you to the group.
+Ready to Explore?
 
-Official Website: www.mcicts.lk
+Let us make your dream trip a reality. Reach out to us for personalized assistance and bookings:
+📧 contact@snjtours.com
 
-Start Date for Morning Classes: January 2025. Details will be shared on our social media platforms, including Instagram and X (formerly Twitter).
-
-For further information, contact us at:
-Phone: 0701840527 (Dineth Gunawardhana - Director of Operations)
-
-Past Board and Committees
-Over the years, MCICTS has been guided by numerous dedicated boards, each contributing to the society’s continued growth:
-
-2023/24 Board
-
-President: Sihilel Wickramarathna
-Vice President: Kalhara Gunawardhana
-Secretary: Vihain Bodiyabadu
-Treasurer: Sasiru Himan
-Chief Organizers: Pasindu Shehan, Naditha Nethdinu
-Media Coordinators: Miyuru Deshapriya, Sathsara Basnayake
-Technical Officers: Nethuja Jayathilake, Thinuga Weerakoon, Binura Yeshantha, Tharusha Silva, Hirosh Nivindu, Dinidu Prabhashana
-
-2020/21 Board
-
-President: Nidula Perera
-Vice President: Haritha Perera
-Secretary: Methsara Perera
-Vice Secretary: Navindu Thashwin
-Treasurer: Rashmika Jayasinghe
-
-2019/20 Board
-
-President: Sajinth Fernando
-Vice President: Shehan Hirusha
-Secretary: Amantha Bopage
-Vice Secretary: Navod Dilshara
-Treasurer: Vihanga Wijekoon
-
-2016/17 Board
-
-President: Thinura Ariyaratne
-Vice President: Lakindu Siriwardana
-Secretary: Rusiru Wijethilaka
-Vice Secretary: Navod Abeyasinghe
-Treasurer: Bishwa Jayampathi
+Whether you’re visiting for wildlife adventures, cultural exploration, or relaxing beach holidays, SNJ Tours is here to make your Sri Lankan journey extraordinary!
 
 
-Recent Achievements
-MCICTS has achieved remarkable milestones, showcasing its commitment to excellence in ICT:
-
-Confinity ‘24 (November 1, 2024): First place in the inter-school quiz competition at Nalanda College Colombo.
-Sagacious ‘24 (May 2024): First place in the Post Manipulation Competition, with Yewan Ladduwahetty earning top honors.
-Young Computer Scientist Competition 2023: Merit certificates for the Public Transport Management System developed by Hirosh Nividu, Ameesha Iduwara, and Pamith Mindinu.
-TEMPUZ ‘23 (Thurstan College): First place in the quiz competition, surpassing top schools such as Ananda College and Dharmaraja College.
-PULZ ’23 (Ananda College): First place in Logo and 3D Designing Competitions, led by Yewan Ladduwahetty.
-Impactful Projects and Initiatives
-MCICTS has also initiated several projects that have had a lasting impact on both the school and the community:
-
-Mahanama College URL Shortener: A custom-made URL shortener to facilitate web-based activities within the school.
-CubeChamp ‘23: Ranking software developed for intra-school speed cubing competitions.
-TECH SEEK ‘23: An intra-school digital competition series in Graphic Designing, Web Designing, and Video Editing.
-Basic ICT Courses: Empowering students with essential skills in IT fundamentals, web design, video editing, and Microsoft Office tools.
-These initiatives are a testament to MCICTS’s dedication to fostering innovation and providing students with the tools to succeed in the ever-evolving world of ICT.
-
-Looking Ahead
-With the newly appointed 2024/25 board, MCICTS is poised to reach new heights of innovation, learning, and collaboration. We thank the outgoing board for their invaluable contributions and look forward to a year filled with growth, creativity, and excellence in ICT. `;
+    `;
 
         let chatMemory = []; // To store user questions and bot responses during the session
         const chatBody = document.getElementById("chat-body");
@@ -437,7 +373,7 @@ With the newly appointed 2024/25 board, MCICTS is poised to reach new heights of
                 ).join("\n\n");
 
                 const prompt = `
-                You are an AI assistant designed to answer questions about the Mahanama College ICT Society (MCICTS). Act as an active member of the club, created by Dineth Gunawardana, the Director of Operations of MCICTS. Your responses should be concise, clear, and structured in a professional yet approachable tone. Avoid long answers; provide short, well-structured, and engaging replies that directly address the user's question.
+                You are an AI assitant to help trabels you are from Snj tours travel agency based on sri lanka
 
                 Refer to the provided memory for accurate information:
                 ${CLUB_MEMORY}
@@ -449,10 +385,38 @@ With the newly appointed 2024/25 board, MCICTS is poised to reach new heights of
                 ${message}
 
                 Respond as follows:
-                - Maintain a friendly yet professional tone.
-                - Use bullet points or numbered lists for clarity when needed.
-                - Include links or references only if highly relevant.
-                - Avoid unnecessary repetition or overly detailed responses.
+                1. Answer the user's question directly.
+                2. Don't genrate too long responses , make short and sweet reponses , 
+                3. Use natural language also
+                
+ 1.	Warm Welcome
+	•	Greet the user warmly and introduce SNJ Tours as a trusted Sri Lankan travel partner.
+	•	Example: “Welcome to SNJ Tours! I’m here to help you plan an amazing trip to Sri Lanka.”
+	2.	Highlight Services Offered
+	•	Clearly outline the wide range of services SNJ Tours provides:
+	•	Hotel bookings
+	•	Wildlife safaris
+	•	Airport transfers
+	•	Full-trip transport
+	•	Tailored tour packages
+	•	Expert travel advice for all locations across Sri Lanka
+	3.	Focus on User’s Needs
+	•	Ask questions to understand the user’s preferences, such as travel dates, budget, interests (wildlife, beaches, cultural sites), and group size.
+	•	Example: “Could you share your travel dates and any specific activities you’d like to include? I’ll create a perfect plan for you.”
+	4.	Highlight Local Expertise
+	•	Assure the user of SNJ Tours’ deep knowledge of Sri Lanka’s destinations, from famous landmarks to hidden gems.
+	•	Example: “Whether you’re visiting Sigiriya, exploring Yala National Park, or relaxing in Galle, I can guide you to the best experiences.”
+	5.	Emphasize Comfort and Convenience
+	•	Reassure users about the quality and reliability of transportation and accommodation services.
+	•	Example: “We offer air-conditioned vehicles, professional drivers, and a smooth travel experience from start to finish.”
+	6.	Encourage Booking with SNJ Tours
+	•	Direct users to SNJ Tours for assistance and bookings.
+	•	Example: “Contact us at contact@snjtours.com to confirm your plans and make reservations.”
+	7.	Call to Action
+	•	Encourage users to start their planning or ask more questions.
+	•	Example: “Let’s begin planning your Sri Lankan adventure! What’s the first stop on your dream trip?”
+	8.	Stay Supportive and Friendly
+	•	Keep the tone welcoming and professional, ensuring the user feels heard and supported.
 
                 AI:
                 `;
