@@ -42,15 +42,19 @@ body {
     border-radius: 5px;
   }
   
+  .rating-group .stars {
+    display: flex;
+    gap: 5px;
+  }
+  
   .rating-group .stars i {
     font-size: 25px;
     color: #ddd;
     cursor: pointer;
+    transition: color 0.3s ease;
   }
   
-  .rating-group .stars i.selected,
-  .rating-group .stars i:hover,
-  .rating-group .stars i:hover ~ i {
+  .rating-group .stars i.selected {
     color: #FFD700;
   }
   

@@ -12,7 +12,6 @@ const firebaseConfig = {
     messagingSenderId: "943687601654",
     appId: "1:943687601654:web:42d93c1a718bb7c6964bd7"
   };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -28,13 +27,22 @@ const thankYouMessage = document.getElementById("thankYouMessage");
 
 let selectedRating = 0;
 
-// Rating functionality
+// Handle star rating
 stars.addEventListener("click", (event) => {
   if (event.target.classList.contains("fa-star")) {
-    selectedRating = parseInt(event.target.getAttribute("data-value"));
+    const starValue = parseInt(event.target.getAttribute("data-value"), 10);
+    selectedRating = starValue;
+
+    // Highlight all stars up to the selected one
     const starIcons = stars.querySelectorAll("i");
     starIcons.forEach((icon, index) => {
-      icon.classList.toggle("selected", index < selectedRating);
+      if (index < starValue) {
+        icon.classList.remove("far");
+        icon.classList.add("fas", "selected");
+      } else {
+        icon.classList.remove("fas", "selected");
+        icon.classList.add("far");
+      }
     });
   }
 });
