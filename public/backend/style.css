@@ -57,3 +57,28 @@ body {
   .mailto-btn:hover {
     background-color: #45a049;
   }
+
+  .review {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+  }
+  .review:last-child {
+    border-bottom: none;
+  }
+  .review h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .review p {
+    margin: 5px 0;
+  }
+  .review a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  .review a:hover {
+    text-decoration: underline;
+  }
+  .stars {
+    color: #fbc02d;
+  }

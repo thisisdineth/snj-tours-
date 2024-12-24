@@ -53,3 +53,4 @@ onValue(subscriptionRef, (snapshot) => {
     emailList.innerHTML = "<p>No subscribed emails found.</p>";
   }
 });
+
